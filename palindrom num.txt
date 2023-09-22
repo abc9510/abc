@@ -1,0 +1,18 @@
+#!/bin/bash
+
+check(){
+num=$1
+reversed=$(echo "$num" | rev)
+
+if [ "$num" -eq "$reversed" ]; then
+echo "$num is palindrom."
+else
+echo "$num is Not A Palindrom."
+fi
+}
+
+
+echo "Enter A NUmber To check Palindrom or Not:"
+read num
+
+check $num

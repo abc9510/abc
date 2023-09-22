@@ -1,0 +1,22 @@
+#!/bin/bash
+
+calculate(){
+principal=$1
+rate=$2
+comp_freq=$3
+time=$4
+
+interest=$(echo "scale=2; $principal*(1+$rate/$comp_freq)^($comp_freq*$time)-$principal" | bc)
+echo "Compound Interest: $interest"
+}
+
+echo "Enter the principal amount:"
+read principal
+echo "Enter the annual interest rate (as a percentage):"
+read rate
+echo "Enter the time compounding frequency(time per year):"
+read comp_ferq
+echo "Enter the time period (in years):"
+read time
+
+calculate $principal $rate $comp_ferq $time
